@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdarg.h>
 
 /**
  * print_unint - print unsigned int
@@ -9,32 +10,21 @@
 
 int print_unint(va_list ap)
 {
-	int x = 0, int y = 0;
-	int dig = 1, int div = 1;
-	unsigned int n = va_arg(ap, int);
-	unsigned int n = n;
+	int x = 1;
+	int y = 0;
+	unsigned int i;
 
-	if (n == 0)
-	{
-		_putchar('0');
-		return (0);
-	}
+	i = va_arg(ap, unsigned int);
 
-	while ((num / 10) != 0)
+	while (i / x > 9)
 	{
-		dig++;
-		num /= 10;
+		x += 10;
 	}
-
-	for (x = (dig - 1) ; j >= 0 ; j--)
+	while (x != 0)
 	{
-		div = 1;
-		for (y = 0 ; y < x ; y++)
-		{
-			div = div * 10;
-		}
-		_putchar((n / div) + '0');
-		n = n % div;
+		y = y + _putchar(i / x + '0');
+		i = i % x;
+		x = x / 10;
 	}
-	return (dig - 1);
+	return (y);
 }

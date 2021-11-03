@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdarg.h>
 
 /**
  * print_dint - print ints
@@ -9,40 +10,34 @@
 
 int print_dint(va_list ap)
 {
-	int dig = 1, int div = 1;
-	int x = va_arg(ap, int);
-	int y = 0, int z = 0, int negs = 0, int num = n;
+	int x;
+	int y;
+	int z;
+	unsigned int i;
 
-	if (n == 0)
+	y = 1;
+	z = 0;
+
+	x = va_arg(ap, int);
+
+	if (x < 0)
 	{
-		_putchar('0');
-		return (0);
+		z = z + _putchar('-');
+		i = x * -1;
 	}
-	while (num / 10 != 0)
+	else
 	{
-		dig++;
-		num /= 10;
+		i = x;
 	}
-	for (y = (dig - 1) ; y >= 0 ; y--)
+	while (i / y > 9)
 	{
-		div = 1;
-		for (z = 0 ; z < y ; z++)
-		{
-			div = div * 10;
-		}
-		if (x < 0)
-		{
-			_putchar('-');
-			_putchar((0 - (x / div)) + '0');
-			x = x % div;
-			x = 0 - x;
-			negs = 1;
-		}
-		else
-		{
-			_putchar((x / div) + '0');
-			x = x % div;
-		}
+		y += 10;
 	}
-	return (dig - 1 + negs);
+	while (y != 0)
+	{
+		z = z + _putchar(i / y + '0');
+		i = i % y;
+		y = y / 10;
+	}
+	return (z);
 }
