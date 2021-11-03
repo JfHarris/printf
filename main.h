@@ -14,12 +14,13 @@
 typedef struct frmt
 {
 	char *type;
-	int(*f)();
+	int(*f)(va_list);
 } frm_t;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-int print_char(char c);
+int print_char(va_list ap);
+int print_str(va_list ap);
 int print_perc(void);
 int print_unint(va_list ap);
 int print_dint(va_list ap);
