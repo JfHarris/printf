@@ -9,12 +9,12 @@
  * struct frmt - checks formats
  *@type: format specifier to print
  *@f: print function
- *
+ *Return: struct
  */
 typedef struct frmt
 {
 	char *type;
-	int(*f)(va_list);
+	int (*f)(va_list);
 } frm_t;
 
 int _putchar(char c);

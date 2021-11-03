@@ -2,12 +2,12 @@
 #include <stdarg.h>
 
 /**
- * print_op - checks specifier to
+ *print_op - checks specifier to
  *@format: string
  *@print_arr: struct op array
  *@list: args to print
  *
- *Return:
+ *Return: chars
  */
 
 int print_op(const char *format, frm_t *print_arr, va_list list)
@@ -31,9 +31,7 @@ int print_op(const char *format, frm_t *print_arr, va_list list)
 				y++;
 			}
 			if (print_arr[y].type != NULL)
-			{
 				count = count + print_arr[y].f(list);
-			}
 			else
 			{
 				if (a == '\0')
@@ -48,9 +46,7 @@ int print_op(const char *format, frm_t *print_arr, va_list list)
 			}
 		}
 		else
-		{
 			count += _putchar(a);
-		}
 		x++;
 		a = format[x];
 	}
@@ -58,10 +54,10 @@ int print_op(const char *format, frm_t *print_arr, va_list list)
 }
 
 /**
- * _printf - print according to format
+ *_printf - print according to format
  *@format: string
  *
- *Return:
+ *Return: chars
  */
 
 int _printf(const char *format, ...)
