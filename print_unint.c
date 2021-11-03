@@ -18,7 +18,7 @@ int print_unint(va_list ap)
 
 	while (i / x > 9)
 	{
-		x += 10;
+		x *= 10;
 	}
 	while (x != 0)
 	{

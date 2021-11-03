@@ -15,6 +15,7 @@ int print_dint(va_list ap)
 	int z;
 	unsigned int i;
 
+	x = 1;
 	y = 1;
 	z = 0;
 
@@ -31,7 +32,7 @@ int print_dint(va_list ap)
 	}
 	while (i / y > 9)
 	{
-		y += 10;
+		y *= 10;
 	}
 	while (y != 0)
 	{
