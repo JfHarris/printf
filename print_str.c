@@ -1,22 +1,28 @@
 #include <stdio.h>
+#include <stdarg.h>
 #include <unistd.h>
 #include "main.h"
 /**
  *print_str - prints out a string
- *@str: string
+ *@ap: string
  *Return: chars printed
  *
  */
-int print_str(char *str)
+int print_str(va_list ap)
 {
-	int a = 0;
+	int i;
+	char *b;
 
-	while (str[a] != '\0')
+	b = va_arg(ap, char *);
+	if (b == NULL)
 	{
-		write(1, &str[a], 1);
-		a++;
+		b = "(NULL)";
+	}
+	i = 0;
+	while (b[i] != '\0')
+	{
+		i = i + _putchar(b[i]);
 	}
 
-	write(1, '\0', 1);
-return (a);
+return (i);
 }

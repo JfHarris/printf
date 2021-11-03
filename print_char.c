@@ -1,18 +1,13 @@
 #include <stdio.h>
+#include <stdarg.h>
 #include <unistd.h>
 #include "main.h"
 /**
  *print_char - prints a char
- *@c: char to be printed
+ *@ap: int
  *Return: nothing else
- *
  */
-int print_char(char c)
+int print_char(va_list ap)
 {
-		if (!c)
-		{
-			return (0);
-		}
-		_putchar(c);
-		return (1);
+		return (_putchar (va_arg(ap, int)));
 }
