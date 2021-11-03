@@ -66,7 +66,7 @@ int _printf(const char *format, ...)
 	int x = 0;
 
 	frm_t ops[] = {
-		{"c", print_char}, {"%", print_perc},
+		{"c", print_char},
 		{"s", print_str},
 		{"d", print_dint},
 		{"i", print_unint},
