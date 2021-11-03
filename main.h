@@ -14,7 +14,7 @@
 typedef struct frmt
 {
 	char *type;
-	int(*f)();
+	int(*f)(va_list);
 } frm_t;
 
 int _putchar(char c);
