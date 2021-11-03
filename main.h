@@ -27,5 +27,6 @@ int print_dint(va_list ap);
 int print_op(const char *format, frm_t *print_arr, va_list list);
 int _strlen(char *s);
 char *_itoa(int value, char *newString);
+int _strcmp(char *s1, char *s2);
 
 #endif
