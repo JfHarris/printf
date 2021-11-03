@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdarg.h>
 
 /**
  * print_op - checks specifier to
@@ -20,7 +21,7 @@ int print_op(const char *format, frm_t *print_arr, va_list list)
 
 	while (a != 0)
 	{
-		if (a = '%')
+		if (a == '%')
 		{
 			y = 0;
 			x++;
@@ -69,10 +70,10 @@ int _printf(const char *format, ...)
 	int x = 0;
 
 	frm_t ops[] = {
-		{'c', print_char},
-		{'s', print_str},
-		{'d', print_dint},
-		{'i', print_unint},
+		{"c", print_char}, {"%", print_perc},
+		{"s", print_str},
+		{"d", print_dint},
+		{"i", print_unint},
 		{NULL, NULL}
 	};
 
