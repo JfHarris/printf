@@ -25,5 +25,6 @@ int print_perc(void);
 int print_unint(va_list ap);
 int print_dint(va_list ap);
 int print_op(const char *format, frm_t *print_arr, va_list list);
+int _strlen(char *s);
 
 #endif
