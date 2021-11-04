@@ -5,7 +5,6 @@
 
 .Sh NAME                 \" Section Header - required - don't modify
 .Nm _printf
-.\" Use .Nm macro to designate other names for the documented program.
 .Nd formatted output conversion
 .Sh SYNOPSIS             \" Section Header - required - don't modify
 .Bl
