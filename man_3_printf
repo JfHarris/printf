@@ -23,16 +23,14 @@ and conversion specifications, each of which results in fetching zero or
 more subsequent arguments. Each conversion specification is
 introduced by the character %, and ends with a conversion specifier.
 
-.\" .It Ev ENV_VAR_1
-.\" Description of ENV_VAR_1
 .Sh CONVERSION SPECIFIERS
 The conversion specifier comes after the % and indicates the character
 
 
 .Pp
 A list of conversion specifiers and their descriptions:
-.Bl -tag -width -indent  \" Differs from above in tag removed
-.Nm c                 \"-a flag as a list item
+.Bl -tag -width -indent
+.Nm c
 .Nd int argument is converted to an unsigned char, and the resulting
 character is written
 
@@ -43,7 +41,7 @@ of character type (pointer to a string).  Characters from the array are
 written up to (but not including) a terminating null byte ('\0')
 .Pp
 
-.Nm  %                 \"-a flag as a list item
+.Nm  %
 .Nd if % is passed to %, it will print out a single %
 .Pp
 
