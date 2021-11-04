@@ -1,49 +1,80 @@
-% _printf
-% Jeff Harris & Cameron Crupper
-% November 2021
+.Dd November 2021               \" DATE
+.Nm Jeff Harris & Cameron Crupper
+.Os _printf
 
-# NAME
-	_printf - formatted output conversion
 
-# SYNOPSIS
-	#include "main.h"
+.Sh NAME                 \" Section Header - required - don't modify
+.Nm _printf
+.\" The following lines are read in generating the apropos(man -k) database. Use only key
+.\" words here as the database is built based on the words here and in the .ND line.
+.\" Use .Nm macro to designate other names for the documented program.
+.Nd formatted output conversion
+.Sh SYNOPSIS             \" Section Header - required - don't modify
+.Bl
+#include "main.h"
+.El
+int _printf(const char *format, ...)
+.El
+.Sh DESCRIPTION          \" Section Header - required - don't modify
+.Nm
+.Nd Writes the output under the control of a format string that specifies how
+subsequent arguments are converted for output. The format string is a
+charater string, beginning and ending in its initial shift state, if any.
+The format string is composed of zero or more directives: ordinary
+characters (not %), which are copied unchanged to the output stream;
+and conversion specifications, each of which results in fetching zero or
+more subsequent arguments. Each conversion specification is
+introduced by the character %, and ends with a conversion specifier.
+.\" .Sh ENVIRONMENT      \" May not be needed
+.\" .Bl -tag -width "ENV_VAR_1" -indent \" ENV_VAR_1 is width of the string ENV_VAR_1
+.\" .It Ev ENV_VAR_1
+.\" Description of ENV_VAR_1
+.\" .It Ev ENV_VAR_2
+.\" Description of ENV_VAR_2
+.Sh CONVERSION SPECIFIERS
+The conversion specifier comes after the % and indicates the character
 
-	int _printf(const char *format, ...)
 
-# DESCRIPTION
-	Writes the output under the control of a format string that specifies how
-	subsequent arguments are converted for output. The format string is a
-	charater string, beginning and ending in its initial shift state, if any.
-	The format string is composed of zero or more directives: ordinary 
-	characters (not %), which are copied unchanged to the output stream;
-	and conversion specifications, each of which results in fetching zero or
-	more subsequent arguments. Each conversion specification is
-        introduced by the character %, and ends with a conversion specifier.
+.Pp
+A list of conversion specifiers and their descriptions:
+.Bl -tag -width -indent  \" Differs from above in tag removed
+.Nm c                 \"-a flag as a list item
+.Nd int argument is converted to an unsigned char, and the resulting
+character is written
 
-# CONVERSION SPECIFIERS
-	The conversion specifier comes after the % and indicates the character
 
-	c - int argument is converted to an unsigned char, and the resulting
-	character is written
+.Nm s
+.Nd the const char * argument is expected to be a pointer to an array
+of character type (pointer to a string).  Characters from the array are
+written up to (but not including) a terminating null byte ('\0')
+.Pp
 
-	s - the const char * argument is expected to be a pointer to an array
-	of character type (pointer to a string).  Characters from the array are
-        written up to (but not including) a terminating null byte ('\0')
+.Nm  %                 \"-a flag as a list item
+.Nd if % is passed to %, it will print out a single %
+.Pp
 
-	% - if % is passed to %, it will print out a single %
+.Nm d, i
+.Nd The int argument is converted to signed decimal notation
+.El                      \" Ends the list
+.Pp
 
-	d, i - The int argument is converted to signed decimal notation
+.Sh RETURN VALUE
+Upon successful return, these functions return the number of
+        characters printed (excluding the null byte used to end output to strings).
 
-# RETURN VALUE
-	Upon successful return, these functions return the number of
-	characters printed (excluding the null byte used to end output to strings).
 
-# EXAMPLES
-	To print "Hello, world":
-		
-		#include <stdio.h>
-		int main() {
-   			// printf() displays the string inside quotation
-   			printf("Hello, World!");
-   			return 0;
-		}
+.Sh EXAMPLES
+To print "Hello, world":
+
+
+#include <stdio.h>
+
+int main() {
+
+// printf() displays the string inside quotation
+
+printf("Hello, World!");
+
+return 0;
+
+}
