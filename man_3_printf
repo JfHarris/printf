@@ -22,8 +22,7 @@ characters (not %), which are copied unchanged to the output stream;
 and conversion specifications, each of which results in fetching zero or
 more subsequent arguments. Each conversion specification is
 introduced by the character %, and ends with a conversion specifier.
-.\" .Sh ENVIRONMENT      \" May not be needed
-.\" .Bl -tag -width "ENV_VAR_1" -indent \" ENV_VAR_1 is width of the string ENV_VAR_1
+
 .\" .It Ev ENV_VAR_1
 .\" Description of ENV_VAR_1
 .\" .It Ev ENV_VAR_2
