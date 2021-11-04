@@ -5,7 +5,6 @@
 
 .Sh NAME                 \" Section Header - required - don't modify
 .Nm _printf
-.\" The following lines are read in generating the apropos(man -k) database. Use only key
 .\" words here as the database is built based on the words here and in the .ND line.
 .\" Use .Nm macro to designate other names for the documented program.
 .Nd formatted output conversion
